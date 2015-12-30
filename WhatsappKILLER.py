@@ -115,11 +115,10 @@ except Exception as e:
 
 #ahora vamos a buscar la caja del usuario para clickar y entrar en el chat
 try:
-    #userBox = driver.find_elements_by_css_selector(".chat > img.avatar-image")[0]
     userBox = driver.find_elements_by_xpath("//div[@class='infinite-list-viewport']/div")
     index = 0
     if len(userBox) > 1:
-        index = int(raw_input('Hay mas de uno a cual quieres acceder: '))
+        index = int(raw_input('Hay mas de uno a cual quieres acceder (1 a N): '))
         index -= 1
 
     userBox[index].click()
@@ -129,12 +128,15 @@ except Exception as e:
 
 socialE = raw_input("Introduzca un texto para que el mensaje parezca real: ")
 
+if len(socialE) == 0:
+  print '[+] No ha elegido texto, usando uno por defecto: "Mira que pasada! http://youtube.com/..."'
+  SocialE = 'Mira que pasada! http://youtube.com/...'
+
 #ahora buscamos la caja de input y enviamos un mensaje
 try:
     print '[+] Buscando inputBox'
     inputBox = driver.find_elements_by_xpath("//div[@class='block-compose']/div[@class='input-container']/div[@class='input-emoji']/div[@class='input']")[0]
     inputBox.click()
-    #SocialE = 'Mira que pasada! http://youtube.com/...'
     fuzzer = u"\uE311" * 1000
     inputBox.send_keys(SocialE)
     for i in range(7):
