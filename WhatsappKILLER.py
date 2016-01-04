@@ -162,8 +162,8 @@ else:
 
 if len(SocialE) == 0:
   if lan=='English':
-    print "[+] You haven't written a text, choosing one by default: 'Look This amazin! http://youtube.com/...'"
-    SocialE = 'Look This amazin! http://youtube.com/...'
+    print "[+] You haven't written a text, choosing one by default: 'you\'ve got to see this! http://youtube.com/...'"
+    SocialE = 'you\'ve got to see this! http://youtube.com/...'
   else:
     print '[+] No ha elegido texto, usando uno por defecto: "Mira que pasada! http://youtube.com/..."'
     SocialE = 'Mira que pasada! http://youtube.com/...'
