@@ -14,8 +14,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 import sys
+from sys import exit
 import time
 from time import sleep
+import os
 
 WEB = 'https://web.whatsapp.com' #web to open
 
@@ -27,7 +29,7 @@ FAIL    = '\033[91m'
 ENDC    = '\033[0m'
 
 Languages = ['English','Spanish']
-
+os.system("clear")
 print '¿English/Español?(1/2)'
 seleccion = 0
 while seleccion != 1 and seleccion != 2:
@@ -76,6 +78,7 @@ banner = '''
 
 '''%(WARNING,ENDC,WARNING,ENDC,WARNING,ENDC,WARNING,ENDC,FAIL,ENDC,WARNING,ENDC,'1.0','eijk & Fare9')            
 
+os.system("clear")
 print banner
 print bannerP
 
@@ -179,7 +182,7 @@ try:
     	print '[+] Wait a moment we are writing the message'
     else:
     	print '[+] Espere un momento estamos escribiendo el mensaje'
-    for i in range(70):
+    for i in range(150):
         inputBox.send_keys(fuzzer)
     inputBox.send_keys(Keys.ENTER)
 except Exception as e:
